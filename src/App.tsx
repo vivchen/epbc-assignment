@@ -17,7 +17,7 @@ const App = (): JSX.Element => {
 
       <ul className="grid gap-8 mt-10 grid-cols-4 p-10">
         {weatherCards.map((weatherCard, index) => (
-          <WeatherCard data={weatherCard} index={index} />
+          <WeatherCard data={weatherCard} key={weatherCard.name + '-' + index}  />
         ))}
       </ul>
       

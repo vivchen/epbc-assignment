@@ -4,7 +4,6 @@ import { optionType, forecastType } from '../types/index'
 
 const useForecast = (setWeatherCards: { (value: SetStateAction<forecastType[]>): void; (arg0: (prevWeatherCards: any) => any[]): void; }) => {
     const limit = 5;
-
     const [term, setTerm] = useState<string>('');
     const [city, setCity] = useState<optionType | null>(null)
     const [searchOptions, setSearchOptions] = useState<[]>([]);
@@ -16,8 +15,6 @@ const useForecast = (setWeatherCards: { (value: SetStateAction<forecastType[]>):
         )
         .then(res => res.json())
         .then(data => setSearchOptions(data))
-
-
     }
 
     const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -57,7 +54,6 @@ const useForecast = (setWeatherCards: { (value: SetStateAction<forecastType[]>):
         })
     }
     
-
     const onSubmit = () => {
         if (!city) return;
         

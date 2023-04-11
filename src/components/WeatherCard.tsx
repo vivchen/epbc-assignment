@@ -2,12 +2,11 @@ import { forecastType } from "../types";
 
 type Props = {
     data: forecastType
-    index: number
 }
 
-const WeatherCard = ({ data, index }: Props): JSX.Element => {
+const WeatherCard = ({ data }: Props): JSX.Element => {
   return (
-    <li key={`${data.name}-${index}`} className="flex flex-col text-zinc-700 bg-white py-10 px-6 rounded-2xl">
+    <li className="flex flex-col text-zinc-700 bg-white py-10 px-6 rounded-2xl">
       <h1 className="text-2xl">{data.name}, <span className="text-lg font-normal">{data.sys.country}</span></h1>
       <div className="flex flex-col mt-6">
         <h2 className="text-4xl font-bold">{data.main.temp}°</h2>
